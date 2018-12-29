@@ -1,18 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+    <div class="home">
+        <switch-btn v-model="open" />
+    </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import SwitchBtn from '@/components/button/switch_btn.vue'; // @ is an alias to /src
 
 @Component({
   components: {
-    HelloWorld,
-  },
+    SwitchBtn
+  }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  private open: boolean = true;
+}
 </script>
+
+<style lang="less" scoped>
+@import '../style/animate';
+</style>
